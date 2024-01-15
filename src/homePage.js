@@ -5,6 +5,7 @@ const home = {
     " At Valhalla Caffe we take pride in serving you the best coffee possible.  \n\
    Our coffee beans are Roasted in house by our Roast-Master Thor using state of the art lighting technology to bring the fullest flavors out!  ",
 };
+let page;
 class Page {
   constuctor(object) {
     this.object2 === object;
@@ -37,8 +38,9 @@ class Page {
     nav.appendChild(contactButton);
   };
   renderBody(home) {
-    let page = home;
+    page = home;
     let contentContainer = document.querySelector(".content");
+
     function addElements(page) {
       for (const property in page) {
         console.log("render here");
