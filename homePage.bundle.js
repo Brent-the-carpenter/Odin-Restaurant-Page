@@ -9,74 +9,57 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Page: () => (/* binding */ Page),
-/* harmony export */   home: () => (/* binding */ home)
+/* harmony export */   renderHome: () => (/* binding */ renderHome)
 /* harmony export */ });
 console.log("It's ALIVE");
 // import { content } from "./index.js";
-const home = {
-  about:
-    " At Valhalla Caffe we take pride in serving you the best coffee possible.  \n\
-   Our coffee beans are Roasted in house by our Roast-Master Thor using state of the art lighting technology to bring the fullest flavors out!  ",
-};
-class Page {
-  constuctor(object) {
-    this.object2 === object;
-  }
 
-  renderHead = () => {
-    const body = document.querySelector("body");
-    const header = document.createElement("header");
-    header.classList.add("header");
-    const heading = document.createElement("h1");
-    heading.classList.add("heading");
-    heading.textContent = "Valhalla Caffe";
-    const nav = document.createElement("nav");
-    nav.classList.add("nav");
-    const homeButton = document.createElement("button");
-    homeButton.classList.add("homeButton");
-    homeButton.textContent = "Home";
-    const menuButton = document.createElement("button");
-    menuButton.classList.add("menuButton");
-    menuButton.textContent = "Menu";
-    const contactButton = document.createElement("button");
-    contactButton.classList.add("contactButton");
-    contactButton.textContent = "Contact us";
-    console.log("im being called");
-    body.appendChild(header);
-    header.appendChild(heading);
-    header.appendChild(nav);
-    nav.appendChild(homeButton);
-    nav.appendChild(menuButton);
-    nav.appendChild(contactButton);
-  };
-  renderBody(home) {
-    let page = home;
-    let contentContainer = document.querySelector(".content");
-    let homeButton = document.querySelector(".homeButton");
-    homeButton.classList.add(".button:active");
-    function addElements(page) {
-      for (const property in page) {
-        console.log("render here");
-        let pageElement = document.createElement("div");
-        pageElement.setAttribute("id", `${property}`);
-        pageElement.textContent = `${page[property]}`;
-        contentContainer.appendChild(pageElement);
-        return page;
-      }
-    }
-    addElements(page);
-  }
+let page;
 
-  renderFooter() {
-    const Footer = document.createElement("footer");
-    const Signuture = document.createElement("div");
-    Signuture.textContent = "©Brent-the-carpenter";
-    Footer.appendChild(Signuture);
-    const body = document.querySelector("body");
-    body.appendChild(Footer);
-  }
+(function renderHead() {
+  const body = document.querySelector("body");
+  const header = document.createElement("header");
+  header.classList.add("header");
+  const heading = document.createElement("h1");
+  heading.classList.add("heading");
+  heading.textContent = "Valhalla Caffe";
+  const nav = document.createElement("nav");
+  nav.classList.add("nav");
+  const homeButton = document.createElement("button");
+  homeButton.classList.add("homeButton");
+  homeButton.textContent = "Home";
+  const menuButton = document.createElement("button");
+  menuButton.classList.add("menuButton");
+  menuButton.textContent = "Menu";
+  const contactButton = document.createElement("button");
+  contactButton.classList.add("contactButton");
+  contactButton.textContent = "Contact us";
+  console.log("im being called");
+  body.appendChild(header);
+  header.appendChild(heading);
+  header.appendChild(nav);
+  nav.appendChild(homeButton);
+  nav.appendChild(menuButton);
+  nav.appendChild(contactButton);
+})();
+function renderHome() {
+  let contentContainer = document.querySelector(".content");
+  let about = document.createElement("div");
+  about.classList.add("about");
+  about.textContent =
+    "At Valhalla Caffe we take pride in serving you the best coffee possible.  \n\
+    Our coffee beans are Roasted in house by our Roast-Master Thor using state of the art lighting technology to bring the fullest flavors out! ";
+  contentContainer.appendChild(about);
 }
+
+(function renderFooter() {
+  const Footer = document.createElement("footer");
+  const Signuture = document.createElement("div");
+  Signuture.textContent = "©Brent-the-carpenter";
+  Footer.appendChild(Signuture);
+  const body = document.querySelector("body");
+  body.appendChild(Footer);
+})();
 
 
 
@@ -89,4 +72,4 @@ class Page {
 /******/ var __webpack_exports__ = (__webpack_exec__("./src/homePage.js"));
 /******/ }
 ]);
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaG9tZVBhZ2UuYnVuZGxlLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7O0FBQUE7QUFDQSxZQUFZLFVBQVU7QUFDdEI7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSwwQ0FBMEMsU0FBUztBQUNuRCxxQ0FBcUMsZUFBZTtBQUNwRDtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7O0FBRUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVzQiIsInNvdXJjZXMiOlsid2VicGFjazovL29kaW4tcmVzdGF1cmFudC1wYWdlLy4vc3JjL2hvbWVQYWdlLmpzIl0sInNvdXJjZXNDb250ZW50IjpbImNvbnNvbGUubG9nKFwiSXQncyBBTElWRVwiKTtcbi8vIGltcG9ydCB7IGNvbnRlbnQgfSBmcm9tIFwiLi9pbmRleC5qc1wiO1xuY29uc3QgaG9tZSA9IHtcbiAgYWJvdXQ6XG4gICAgXCIgQXQgVmFsaGFsbGEgQ2FmZmUgd2UgdGFrZSBwcmlkZSBpbiBzZXJ2aW5nIHlvdSB0aGUgYmVzdCBjb2ZmZWUgcG9zc2libGUuICBcXG5cXFxuICAgT3VyIGNvZmZlZSBiZWFucyBhcmUgUm9hc3RlZCBpbiBob3VzZSBieSBvdXIgUm9hc3QtTWFzdGVyIFRob3IgdXNpbmcgc3RhdGUgb2YgdGhlIGFydCBsaWdodGluZyB0ZWNobm9sb2d5IHRvIGJyaW5nIHRoZSBmdWxsZXN0IGZsYXZvcnMgb3V0ISAgXCIsXG59O1xuY2xhc3MgUGFnZSB7XG4gIGNvbnN0dWN0b3Iob2JqZWN0KSB7XG4gICAgdGhpcy5vYmplY3QyID09PSBvYmplY3Q7XG4gIH1cblxuICByZW5kZXJIZWFkID0gKCkgPT4ge1xuICAgIGNvbnN0IGJvZHkgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiYm9keVwiKTtcbiAgICBjb25zdCBoZWFkZXIgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiaGVhZGVyXCIpO1xuICAgIGhlYWRlci5jbGFzc0xpc3QuYWRkKFwiaGVhZGVyXCIpO1xuICAgIGNvbnN0IGhlYWRpbmcgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiaDFcIik7XG4gICAgaGVhZGluZy5jbGFzc0xpc3QuYWRkKFwiaGVhZGluZ1wiKTtcbiAgICBoZWFkaW5nLnRleHRDb250ZW50ID0gXCJWYWxoYWxsYSBDYWZmZVwiO1xuICAgIGNvbnN0IG5hdiA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJuYXZcIik7XG4gICAgbmF2LmNsYXNzTGlzdC5hZGQoXCJuYXZcIik7XG4gICAgY29uc3QgaG9tZUJ1dHRvbiA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJidXR0b25cIik7XG4gICAgaG9tZUJ1dHRvbi5jbGFzc0xpc3QuYWRkKFwiaG9tZUJ1dHRvblwiKTtcbiAgICBob21lQnV0dG9uLnRleHRDb250ZW50ID0gXCJIb21lXCI7XG4gICAgY29uc3QgbWVudUJ1dHRvbiA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJidXR0b25cIik7XG4gICAgbWVudUJ1dHRvbi5jbGFzc0xpc3QuYWRkKFwibWVudUJ1dHRvblwiKTtcbiAgICBtZW51QnV0dG9uLnRleHRDb250ZW50ID0gXCJNZW51XCI7XG4gICAgY29uc3QgY29udGFjdEJ1dHRvbiA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJidXR0b25cIik7XG4gICAgY29udGFjdEJ1dHRvbi5jbGFzc0xpc3QuYWRkKFwiY29udGFjdEJ1dHRvblwiKTtcbiAgICBjb250YWN0QnV0dG9uLnRleHRDb250ZW50ID0gXCJDb250YWN0IHVzXCI7XG4gICAgY29uc29sZS5sb2coXCJpbSBiZWluZyBjYWxsZWRcIik7XG4gICAgYm9keS5hcHBlbmRDaGlsZChoZWFkZXIpO1xuICAgIGhlYWRlci5hcHBlbmRDaGlsZChoZWFkaW5nKTtcbiAgICBoZWFkZXIuYXBwZW5kQ2hpbGQobmF2KTtcbiAgICBuYXYuYXBwZW5kQ2hpbGQoaG9tZUJ1dHRvbik7XG4gICAgbmF2LmFwcGVuZENoaWxkKG1lbnVCdXR0b24pO1xuICAgIG5hdi5hcHBlbmRDaGlsZChjb250YWN0QnV0dG9uKTtcbiAgfTtcbiAgcmVuZGVyQm9keShob21lKSB7XG4gICAgbGV0IHBhZ2UgPSBob21lO1xuICAgIGxldCBjb250ZW50Q29udGFpbmVyID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5jb250ZW50XCIpO1xuICAgIGxldCBob21lQnV0dG9uID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5ob21lQnV0dG9uXCIpO1xuICAgIGhvbWVCdXR0b24uY2xhc3NMaXN0LmFkZChcIi5idXR0b246YWN0aXZlXCIpO1xuICAgIGZ1bmN0aW9uIGFkZEVsZW1lbnRzKHBhZ2UpIHtcbiAgICAgIGZvciAoY29uc3QgcHJvcGVydHkgaW4gcGFnZSkge1xuICAgICAgICBjb25zb2xlLmxvZyhcInJlbmRlciBoZXJlXCIpO1xuICAgICAgICBsZXQgcGFnZUVsZW1lbnQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiZGl2XCIpO1xuICAgICAgICBwYWdlRWxlbWVudC5zZXRBdHRyaWJ1dGUoXCJpZFwiLCBgJHtwcm9wZXJ0eX1gKTtcbiAgICAgICAgcGFnZUVsZW1lbnQudGV4dENvbnRlbnQgPSBgJHtwYWdlW3Byb3BlcnR5XX1gO1xuICAgICAgICBjb250ZW50Q29udGFpbmVyLmFwcGVuZENoaWxkKHBhZ2VFbGVtZW50KTtcbiAgICAgICAgcmV0dXJuIHBhZ2U7XG4gICAgICB9XG4gICAgfVxuICAgIGFkZEVsZW1lbnRzKHBhZ2UpO1xuICB9XG5cbiAgcmVuZGVyRm9vdGVyKCkge1xuICAgIGNvbnN0IEZvb3RlciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJmb290ZXJcIik7XG4gICAgY29uc3QgU2lnbnV0dXJlID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKTtcbiAgICBTaWdudXR1cmUudGV4dENvbnRlbnQgPSBcIsKpQnJlbnQtdGhlLWNhcnBlbnRlclwiO1xuICAgIEZvb3Rlci5hcHBlbmRDaGlsZChTaWdudXR1cmUpO1xuICAgIGNvbnN0IGJvZHkgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiYm9keVwiKTtcbiAgICBib2R5LmFwcGVuZENoaWxkKEZvb3Rlcik7XG4gIH1cbn1cblxuZXhwb3J0IHsgUGFnZSwgaG9tZSB9O1xuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaG9tZVBhZ2UuYnVuZGxlLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUNBLFlBQVksVUFBVTs7QUFFdEI7O0FBRUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxDQUFDO0FBQ0Q7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsQ0FBQzs7QUFFcUIiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9vZGluLXJlc3RhdXJhbnQtcGFnZS8uL3NyYy9ob21lUGFnZS5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJjb25zb2xlLmxvZyhcIkl0J3MgQUxJVkVcIik7XG4vLyBpbXBvcnQgeyBjb250ZW50IH0gZnJvbSBcIi4vaW5kZXguanNcIjtcblxubGV0IHBhZ2U7XG5cbihmdW5jdGlvbiByZW5kZXJIZWFkKCkge1xuICBjb25zdCBib2R5ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcImJvZHlcIik7XG4gIGNvbnN0IGhlYWRlciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJoZWFkZXJcIik7XG4gIGhlYWRlci5jbGFzc0xpc3QuYWRkKFwiaGVhZGVyXCIpO1xuICBjb25zdCBoZWFkaW5nID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImgxXCIpO1xuICBoZWFkaW5nLmNsYXNzTGlzdC5hZGQoXCJoZWFkaW5nXCIpO1xuICBoZWFkaW5nLnRleHRDb250ZW50ID0gXCJWYWxoYWxsYSBDYWZmZVwiO1xuICBjb25zdCBuYXYgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwibmF2XCIpO1xuICBuYXYuY2xhc3NMaXN0LmFkZChcIm5hdlwiKTtcbiAgY29uc3QgaG9tZUJ1dHRvbiA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJidXR0b25cIik7XG4gIGhvbWVCdXR0b24uY2xhc3NMaXN0LmFkZChcImhvbWVCdXR0b25cIik7XG4gIGhvbWVCdXR0b24udGV4dENvbnRlbnQgPSBcIkhvbWVcIjtcbiAgY29uc3QgbWVudUJ1dHRvbiA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJidXR0b25cIik7XG4gIG1lbnVCdXR0b24uY2xhc3NMaXN0LmFkZChcIm1lbnVCdXR0b25cIik7XG4gIG1lbnVCdXR0b24udGV4dENvbnRlbnQgPSBcIk1lbnVcIjtcbiAgY29uc3QgY29udGFjdEJ1dHRvbiA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJidXR0b25cIik7XG4gIGNvbnRhY3RCdXR0b24uY2xhc3NMaXN0LmFkZChcImNvbnRhY3RCdXR0b25cIik7XG4gIGNvbnRhY3RCdXR0b24udGV4dENvbnRlbnQgPSBcIkNvbnRhY3QgdXNcIjtcbiAgY29uc29sZS5sb2coXCJpbSBiZWluZyBjYWxsZWRcIik7XG4gIGJvZHkuYXBwZW5kQ2hpbGQoaGVhZGVyKTtcbiAgaGVhZGVyLmFwcGVuZENoaWxkKGhlYWRpbmcpO1xuICBoZWFkZXIuYXBwZW5kQ2hpbGQobmF2KTtcbiAgbmF2LmFwcGVuZENoaWxkKGhvbWVCdXR0b24pO1xuICBuYXYuYXBwZW5kQ2hpbGQobWVudUJ1dHRvbik7XG4gIG5hdi5hcHBlbmRDaGlsZChjb250YWN0QnV0dG9uKTtcbn0pKCk7XG5mdW5jdGlvbiByZW5kZXJIb21lKCkge1xuICBsZXQgY29udGVudENvbnRhaW5lciA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuY29udGVudFwiKTtcbiAgbGV0IGFib3V0ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKTtcbiAgYWJvdXQuY2xhc3NMaXN0LmFkZChcImFib3V0XCIpO1xuICBhYm91dC50ZXh0Q29udGVudCA9XG4gICAgXCJBdCBWYWxoYWxsYSBDYWZmZSB3ZSB0YWtlIHByaWRlIGluIHNlcnZpbmcgeW91IHRoZSBiZXN0IGNvZmZlZSBwb3NzaWJsZS4gIFxcblxcXG4gICAgT3VyIGNvZmZlZSBiZWFucyBhcmUgUm9hc3RlZCBpbiBob3VzZSBieSBvdXIgUm9hc3QtTWFzdGVyIFRob3IgdXNpbmcgc3RhdGUgb2YgdGhlIGFydCBsaWdodGluZyB0ZWNobm9sb2d5IHRvIGJyaW5nIHRoZSBmdWxsZXN0IGZsYXZvcnMgb3V0ISBcIjtcbiAgY29udGVudENvbnRhaW5lci5hcHBlbmRDaGlsZChhYm91dCk7XG59XG5cbihmdW5jdGlvbiByZW5kZXJGb290ZXIoKSB7XG4gIGNvbnN0IEZvb3RlciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJmb290ZXJcIik7XG4gIGNvbnN0IFNpZ251dHVyZSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG4gIFNpZ251dHVyZS50ZXh0Q29udGVudCA9IFwiwqlCcmVudC10aGUtY2FycGVudGVyXCI7XG4gIEZvb3Rlci5hcHBlbmRDaGlsZChTaWdudXR1cmUpO1xuICBjb25zdCBib2R5ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcImJvZHlcIik7XG4gIGJvZHkuYXBwZW5kQ2hpbGQoRm9vdGVyKTtcbn0pKCk7XG5cbmV4cG9ydCB7IHJlbmRlckhvbWUgfTtcbiJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==
