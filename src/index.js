@@ -1,6 +1,7 @@
 import "./style.css";
 import { renderHome } from "./homePage.js";
 import { addMenuItems } from "./menu.js";
+import { contact } from "./contact.js";
 const homeButton = document.querySelector(".homeButton");
 const menuButton = document.querySelector(".menuButton");
 const contactButton = document.querySelector(".contactButton");
@@ -53,7 +54,7 @@ menuButton.addEventListener("click", () => {
 
 contactButton.addEventListener("click", () => {
   page = "contact";
-
+  refresh(page);
   contact(page);
   return page;
 });

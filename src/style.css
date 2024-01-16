@@ -83,6 +83,28 @@ div.content {
   gap: 16px;
   justify-content: center;
 }
+#mapContainer {
+  display: flex;
+  grid-row: 1/2;
+  flex-direction: column;
+}
+#map {
+  width: 500px;
+  min-width: 200px;
+  height: 500px;
+  background-image: url(./mapAdress.PNG);
+}
+#info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border-top: 3px solid black;
+  gap: 8px;
+  grid-row: 2/3;
+  height: 5rem;
+  background-color: rgba(238, 237, 237, 0.9);
+  padding: 8px;
+}
 footer {
   grid-row: 3/4;
   align-self: end;
