@@ -58,9 +58,9 @@ div.content {
 .about {
   grid-row: 1/3;
   display: flex;
-  width: 500px;
+  /* width: 500px; */
   min-width: 200px;
-  height: 500px;
+  /* height: 500px; */
   font-size: 40px;
   background-color: rgba(162, 161, 161, 0.7);
   justify-content: center;
@@ -75,7 +75,7 @@ div.content {
   flex-wrap: wrap;
   flex-direction: column;
   width: 1fr;
-  height: 12rem;
+  /* height: 12rem; */
   color: black;
   font-size: 30px;
   background-color: rgba(197, 195, 195, 0.9);
