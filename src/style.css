@@ -13,7 +13,7 @@ body {
   grid-template-rows: 1fr 8fr 0.5fr;
 
   background-image: url("./coffee\ shop.jpeg");
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-size: cover;
   background-position: center;
   justify-items: center;
@@ -31,6 +31,7 @@ h1.heading {
 }
 .nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 40px;
 }
 nav > * {
@@ -42,30 +43,50 @@ button {
   background: none;
   border: none;
 }
-button:active {
+#active {
   border-bottom: 5px solid black;
 }
 div.content {
-  grid-row: 2/4;
-  display: flex;
-  width: 100vw;
-  height: 100%;
-
-  justify-content: center;
-  align-items: center;
+  grid-row: 2/3;
+  display: grid;
+  width: 2fr;
+  height: auto;
+  grid-template-rows: minmax(200px, auto);
+  gap: 20px;
+  padding: 16px;
 }
-#about {
+.about {
+  grid-row: 1/3;
   display: flex;
   width: 500px;
-  height: auto;
+  min-width: 200px;
+  height: 500px;
   font-size: 40px;
-  background-color: rgba(162, 161, 161, 0.5);
+  background-color: rgba(162, 161, 161, 0.7);
   justify-content: center;
+  align-self: center;
   text-align: center;
   color: white;
+  font-weight: 500;
   padding: 10px;
 }
+.menuItem {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 1fr;
+  height: 12rem;
+  color: black;
+  font-size: 30px;
+  background-color: rgba(197, 195, 195, 0.9);
+  padding: 16px;
+  gap: 16px;
+  justify-content: center;
+}
 footer {
+  grid-row: 3/4;
   align-self: end;
+  margin-top: 10px;
   margin-bottom: 40px;
+  color: #ffffff;
 }

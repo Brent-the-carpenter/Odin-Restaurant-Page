@@ -1,17 +1,59 @@
 import "./style.css";
-import { Page } from "./homePage.js";
-import { home } from "./homePage.js";
-
-const content = document.querySelector(".content");
+import { renderHome } from "./homePage.js";
+import { addMenuItems } from "./menu.js";
 const homeButton = document.querySelector(".homeButton");
 const menuButton = document.querySelector(".menuButton");
-const contactButton = document.querySelector(".conctactButton");
-export { content };
+const contactButton = document.querySelector(".contactButton");
+let page = "home";
 
-let homePage = new Page();
+function renderContent() {
+  refresh(page);
+  if (page === "home") {
+    renderHome();
+  } else if (page === "menu") {
+    addMenuItems();
+  } else if (page === "contact") {
+    contact();
+  }
+}
+renderContent();
 
-homePage.renderBody(home);
-homePage.renderHead();
-homePage.renderFooter();
+function refresh(page) {
+  let contentContainer = document.querySelector(".content");
+  while (contentContainer.firstChild) {
+    contentContainer.removeChild(contentContainer.lastChild);
+  }
+  if (page !== "home" && page !== "contact") {
+    menuButton.setAttribute("id", "active");
+    homeButton.removeAttribute("id", "active");
+    contactButton.removeAttribute("id", "active");
+  } else if (page !== "menu" && page !== "contact") {
+    menuButton.removeAttribute("id", "active");
+    homeButton.setAttribute("id", "active");
+    contactButton.removeAttribute("id", "active");
+  } else if (page !== "menu" && page !== "home") {
+    menuButton.removeAttribute("id", "active");
+    homeButton.removeAttribute("id", "active");
+    contactButton.setAttribute("id", "active");
+  }
+}
+homeButton.addEventListener("click", () => {
+  page = "home";
+  refresh(page);
+  renderHome();
+  return page;
+});
 
-export { home };
+menuButton.addEventListener("click", () => {
+  page = "menu";
+  refresh(page);
+  addMenuItems();
+  return page;
+});
+
+contactButton.addEventListener("click", () => {
+  page = "contact";
+
+  contact(page);
+  return page;
+});
